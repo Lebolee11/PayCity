@@ -27,6 +27,10 @@ namespace payCityUtilitiesApp.Api.Data
                 .HasIndex(u => u.Email)
                 .IsUnique();
 
+            modelBuilder.Entity<Meter>()
+                .HasIndex(m => m.MetreId)
+                .IsUnique();
+
             modelBuilder.Entity<Fine>()
                 .HasOne(f => f.User)
                 .WithMany()

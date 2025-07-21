@@ -17,10 +17,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IAuthService, AuthService>();
 
 // Configure Entity Framework Core with SQL Server
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -28,11 +25,15 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // Register Repositories for Dependency Injection
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-// Add other repositories here as you create them:
-// builder.Services.AddScoped<IFineRepository, FineRepository>();
-// builder.Services.AddScoped<IMeterRepository, MeterRepository>();
-// builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
+builder.Services.AddScoped<IFineRepository, FineRepository>();         
+builder.Services.AddScoped<IMeterRepository, MeterRepository>();       
+builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 
+// Register Services for Dependency Injection
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IUtilityService, UtilityService>();     
+builder.Services.AddScoped<IMunicipalService, MunicipalService>();
+builder.Services.AddScoped<IFineService, FineService>(); 
 
 // Configure JWT Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
