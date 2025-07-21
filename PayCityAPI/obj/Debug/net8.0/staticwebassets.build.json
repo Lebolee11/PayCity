@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "7hHCRZjTftPW2IM5Vmi05ahNa0h7hjIcUNr4WK8JbB8=",
+  "Source": "PayCityAPI",
+  "BasePath": "_content/PayCityAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
