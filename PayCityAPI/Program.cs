@@ -24,7 +24,7 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 
 // Configure Entity Framework Core with SQL Server
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))); // <--- CHANGED THIS
 
 // Register Repositories for Dependency Injection
 builder.Services.AddScoped<IUserRepository, UserRepository>();
